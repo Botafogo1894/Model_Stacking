@@ -33,12 +33,14 @@ As you can see from the graph below, our top performer achieved a **testing accu
 
 To answer this question, first, I opted to combine and average the predictions of my three weakest learners - Random Forest, AdaBoost, and KNN classifiers and construct a new dataframe of features that I can feed into my strong learners. Code below:
 
-![](https://github.com/Botafogo1894/Model_Stacking/blob/master/top_3_models.png)
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/Round%201%20Stacking.png)
 
 Each column in the table above is the average prediction coefficient for each of the eight genres and each row is a song lyric with a corresponding true genre, stored in a separate y-variable as a list of class labels.
+
 Next, I split the data in a train and test set and ran Stage 2 of the Model Stacking, where my strong learners - GradientBoost and Naive Bayes - used the combined predictions from the weak learners to generate a new set of prediction. Then, I combined the predicted results from Stage 2 into one final data frame, which I wanted to feed into my final meta-learner - NN.
 
 I opted to go with a Neural Network for the final stage of my Model Stacking because NNs tend to perform very well on multi-classification problems and NNs are pretty good at finding hidden links and figuring out complex relationships between dependent and independent variables. I used "softmax" for my output layer activation function because we're trying to predict eight classes. Lo and behold, results below…
 
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/Round%201%20Stacking.png)
 
 The 80% accuracy was generated on a "holdout" set of test data, which consisted of 3600 song lyrics that the NN model had never seen before. The training accuracy of 86% with cross-validation was also very impressive, and what made me especially happy was the fact that there wasn't a significant difference between the training set and the testing set performance, so there didn't seem to be much overfitting.
