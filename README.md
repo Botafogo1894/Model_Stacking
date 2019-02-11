@@ -37,7 +37,9 @@ To answer this question, first, I opted to combine and average the predictions o
 
 Each column in the table above is the average prediction coefficient for each of the eight genres and each row is a song lyric with a corresponding true genre, stored in a separate y-variable as a list of class labels.
 
-Next, I split the data in a train and test set and ran Stage 2 of the Model Stacking, where my strong learners - GradientBoost and Naive Bayes - used the combined predictions from the weak learners to generate a new set of prediction. Then, I combined the predicted results from Stage 2 into one final data frame, which I wanted to feed into my final meta-learner - NN.
+Next, I split the data in a train and test set and ran Stage 2 of the Model Stacking, where my strong learners - GradientBoost and Naive Bayes - used the combined predictions from the weak learners to generate a new set of prediction. Then, I combined these predictions and used them as features into my final meta-learner - NN. Code below:
+
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/Final%20NN%20model.png)
 
 I opted to go with a Neural Network for the final stage of my Model Stacking because NNs tend to perform very well on multi-classification problems and NNs are pretty good at finding hidden links and figuring out complex relationships between dependent and independent variables. I used "softmax" for my output layer activation function because we're trying to predict eight classes. Lo and behold, results below…
 
