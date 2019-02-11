@@ -21,9 +21,11 @@ __Note:__ It is very important to have a sufficient amount of data in order to p
 ## My process for Model Stacking
 For my first experiment with Model Stacking, I decided to expand on my latest Data Science project, which was a Natural Language Processing model that aims to predict a song's genre from its lyrics. For that project, we preprocessed a list of 16,000 song lyrics from eight different genres - Hip-Hop, Country, Pop, Rock, Metal, Electronic, Jazz, and R&B. We made sure to include 2000 songs per genre in our dataset to avoid the issue of class imbalance. The first step was to run a diverse set of basic models with a low correlation between their predictive methods in order to be able to build our Model Stacking teams accordingly. Please see results below:
 
-
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/basic_5_models.png)
 
 Next, we decided to take the top 3 models and do some hyperparameter optimization via an extensive GridSearch, in order to get a sense for the highest accuracy that our top standalone model can achieve. Results below:
+
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/basic_5_models.png)
 
 As you can see from the graph below, our top performer achieved a testing accuracy of 50%, which at first sight doesn't seem very high, but given that our model is trying to predict what genre a song belongs to out of 8 possible genres, this accuracy is exactly four times better than random guessing (probability of a random guess = 1/8 or 12.5%). This means that about half the time our model predicts exactly what genre a song belongs to, only based on that song's lyrics and that 50% testing accuracy was achieved on a testing set of over 3000 songs…not bad at all!
 
