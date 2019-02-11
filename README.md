@@ -25,11 +25,15 @@ For my first experiment with Model Stacking, I decided to expand on my latest Da
 
 Next, we decided to take the top 3 models and do some hyperparameter optimization via an extensive GridSearch, in order to get a sense for the highest accuracy that our top standalone model can achieve. Results below:
 
-![](https://github.com/Botafogo1894/Model_Stacking/blob/master/basic_5_models.png)
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/top_3_models.png)
 
-As you can see from the graph below, our top performer achieved a testing accuracy of 50%, which at first sight doesn't seem very high, but given that our model is trying to predict what genre a song belongs to out of 8 possible genres, this accuracy is exactly four times better than random guessing (probability of a random guess = 1/8 or 12.5%). This means that about half the time our model predicts exactly what genre a song belongs to, only based on that song's lyrics and that 50% testing accuracy was achieved on a testing set of over 3000 songs…not bad at all!
+As you can see from the graph below, our top performer achieved a **testing accuracy of 50%**, which at first sight doesn't seem very high, but given that our model is trying to predict what genre a song belongs to out of 8 possible genres, this accuracy is **exactly four times better than random guessing** (probability of a random guess = 1/8 or 12.5%). This means that about half the time our model predicts exactly what genre a song belongs to, only based on that song's lyrics and that 50% testing accuracy was achieved on a testing set of over 3000 songs…not bad at all!
 
-First, I opted to combine and average the predictions of my three weakest learners - Random Forest, AdaBoost, and KNN classifiers and construct a new data frame of features that I can feed into my strong learners. Code below:
+## But can we do better using Model Stacking and Neural Netwroks? 
+
+To answer this question, first, I opted to combine and average the predictions of my three weakest learners - Random Forest, AdaBoost, and KNN classifiers and construct a new dataframe of features that I can feed into my strong learners. Code below:
+
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/top_3_models.png)
 
 Each column in the table above is the average prediction coefficient for each of the eight genres and each row is a song lyric with a corresponding true genre, stored in a separate y-variable as a list of class labels.
 Next, I split the data in a train and test set and ran Stage 2 of the Model Stacking, where my strong learners - GradientBoost and Naive Bayes - used the combined predictions from the weak learners to generate a new set of prediction. Then, I combined the predicted results from Stage 2 into one final data frame, which I wanted to feed into my final meta-learner - NN.
