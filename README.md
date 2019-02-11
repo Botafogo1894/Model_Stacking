@@ -9,8 +9,7 @@ Model Stacking is analogous with real-world examples such as building successful
 
 Below you can see an example of the top winning model of a recent major Kaggle competition:
 
-
-
+![](https://github.com/Botafogo1894/Project3/blob/master/basic%205%20models.png)
 
 Note: It is very important to have a sufficient amount of data in order to perform robust Model Stacking. To avoid over-fitting, you need to perform cross-validation at each stacking/training stage and keep some data aside as a "holdout" set for the testing stage and make sure that there isn't a huge discrepancy between the model's performance on train and test data.
 Initial Stage - you run a variety of different standalone models and spend some time analyzing their individual performance metrics and thinking about where some models might have done better than others.
