@@ -1,11 +1,15 @@
 # Model_Stacking
 Using Model-Stacking and Deep Learning NNs to boost model performance and accuracy of my NLP models in Project3.
 
-What is Model Stacking?
+## What is Model Stacking?
+
 Model stacking is a Data Science ensemble method, which relies on the "wisdom of the crowd" premise that a diverse selection of combined "weaker" learners working together, will often outperform a single "strong" model. The winners of most major Kaggle competitions over the past 4–5 years have used some configuration of Model Stacking in their final winning models.
 Model Stacking is analogous with real-world examples such as building successful human teams in business, science, sports etc. If all the members of the team were really good at the exact same task, then the team would crush any challenge that requires this one specific skill, but it would fail miserably when it comes to handling complex real-life problems that require a plethora of diverse skills, mindsets, and approaches. I do not know much about American football, but even with my limited knowledge, it is pretty obvious to me that you cannot win a football game with a team that consists of only quarterbacks, even if those quarterbacks are the best in the league. That is why optimal sports teams and successful business units consist of a diverse group of individuals with a wider range of strengths and weaknesses.
-Cool story bro…but how does this work in practice?
+## How does Model Stacking work in practice?
+
 Below you can see an example of the top winning model of a recent major Kaggle competition:
+
+
 
 
 Note: It is very important to have a sufficient amount of data in order to perform robust Model Stacking. To avoid over-fitting, you need to perform cross-validation at each stacking/training stage and keep some data aside as a "holdout" set for the testing stage and make sure that there isn't a huge discrepancy between the model's performance on train and test data.
