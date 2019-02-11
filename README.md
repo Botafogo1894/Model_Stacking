@@ -41,6 +41,6 @@ Next, I split the data in a train and test set and ran Stage 2 of the Model Stac
 
 I opted to go with a Neural Network for the final stage of my Model Stacking because NNs tend to perform very well on multi-classification problems and NNs are pretty good at finding hidden links and figuring out complex relationships between dependent and independent variables. I used "softmax" for my output layer activation function because we're trying to predict eight classes. Lo and behold, results below…
 
-![](https://github.com/Botafogo1894/Model_Stacking/blob/master/Round%201%20Stacking.png)
+![](https://github.com/Botafogo1894/Model_Stacking/blob/master/final%20perf.png)
 
-The 80% accuracy was generated on a "holdout" set of test data, which consisted of 3600 song lyrics that the NN model had never seen before. The training accuracy of 86% with cross-validation was also very impressive, and what made me especially happy was the fact that there wasn't a significant difference between the training set and the testing set performance, so there didn't seem to be much overfitting.
+**The 80% accuracy** was generated on a "holdout" set of test data, which consisted of 3600 song lyrics that the NN model had never seen before. The training accuracy of 86% with cross-validation was also very impressive, and what made me especially happy was the fact that there wasn't a significant difference between the training set and the testing set performance, so **there didn't seem to be much overfitting.**
